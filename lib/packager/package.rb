@@ -86,6 +86,10 @@ class Packager
       if File.exist?(binary)
         puts "  >>> copying binary %s => %s" % [compile_target.output, workdir]
 
+        # Workaround a bug introduced in version 5.6.0 of the Linux kernel
+        # https://github.com/docker/for-linux/issues/1015
+        FileUtils.touch(binary)
+
         FileUtils.cp(binary, workdir)
       end
     end
