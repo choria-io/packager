@@ -1,11 +1,11 @@
 desc "Builds and pushes all dockerfiles"
 
-GOVERSION="1.16.4"
+GOVERSION="1.17.1"
 
 _TAGVERSION=GOVERSION.split('.')[0,2].join('.')
 
 task :build do
-  Dir.glob("Dockerfile.el6-go") do |file|
+  Dir.glob("Dockerfile.*") do |file|
     tag = file.split(/Dockerfile\./).last
     nocache = ENV["NOCACHE"] ? "--no-cache" : ""
 
