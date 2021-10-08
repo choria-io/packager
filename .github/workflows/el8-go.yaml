@@ -27,5 +27,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: choria/packager:el8-go${TAG}
+          tags: choria/packager:el8-go${{env.TAG}}
           file: Dockerfile.el8-go
