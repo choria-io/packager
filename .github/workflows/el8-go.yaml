@@ -21,6 +21,8 @@ jobs:
           file: Dockerfile.bullseye-go
           go: ${{ env.GO_VERSION }}
           tag: bullseye-go${{ env.TAG }}
+          hub_user: ${{ secrets.DOCKERHUB_USERNAME }}
+          hub_password: ${{ secrets.DOCKERHUB_TOKEN }}
 
   el8_go:
     runs-on: ubuntu-latest
@@ -33,3 +35,5 @@ jobs:
           file: Dockerfile.el8-go
           go: ${{ env.GO_VERSION }}
           tag: el8-go${{ env.TAG }}
+          hub_user: ${{ secrets.DOCKERHUB_USERNAME }}
+          hub_password: ${{ secrets.DOCKERHUB_TOKEN }}
