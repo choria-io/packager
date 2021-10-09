@@ -11,14 +11,14 @@ env:
 
 jobs:
   bullseye_go:
-    uses: ./github/actions/build-packager@main
+    uses: ./.github/actions/build-packager@main
     with:
       file: Dockerfile.bullseye-go
       go: ${{ env.GO_VERSION }}
       tag: bullseye-go${{ env.TAG }}
 
   el8_go:
-    uses: ./github/actions/build-packager@main
+    uses: ./.github/actions/build-packager@main
     with:
       file: Dockerfile.el8-go
       go: ${{ env.GO_VERSION }}
