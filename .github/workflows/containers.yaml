@@ -39,6 +39,9 @@ jobs:
           hub_password: ${{ secrets.DOCKERHUB_TOKEN }}
 
   debian_go:
+    needs:
+      - buster_go
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
