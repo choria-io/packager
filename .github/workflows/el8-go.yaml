@@ -28,6 +28,8 @@ jobs:
           push: true
           tags: choria/packager:bullseye-go${{env.TAG}}
           file: Dockerfile.bullseye-go
+          build-args:
+            GOVERSION: ${{env.GO_VERSION}}
 
   el8_go:
     runs-on: ubuntu-latest
@@ -47,3 +49,5 @@ jobs:
           push: true
           tags: choria/packager:el8-go${{env.TAG}}
           file: Dockerfile.el8-go
+          build-args:
+            GOVERSION: ${{env.GO_VERSION}}
