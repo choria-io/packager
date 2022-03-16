@@ -6,8 +6,8 @@ on:
       - main
 
 env:
-  GO_VERSION: "1.17.8"
-  TAG: "1.17"
+  GO_VERSION: "1.18.0"
+  TAG: "1.18"
 
 jobs:
   bullseye_go:
