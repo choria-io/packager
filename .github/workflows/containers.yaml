@@ -55,7 +55,7 @@ jobs:
           hub_user: ${{ secrets.DOCKERHUB_USERNAME }}
           hub_password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-  stretch_go:
+  bionic_go:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -63,23 +63,9 @@ jobs:
 
       - uses: ./.github/actions/build-packager
         with:
-          file: Dockerfile.stretch-go
+          file: Dockerfile.bionic-go
           go: ${{ env.GO_VERSION }}
-          tag: stretch-go${{ env.TAG }}
-          hub_user: ${{ secrets.DOCKERHUB_USERNAME }}
-          hub_password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-  xenial_go:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - uses: ./.github/actions/build-packager
-        with:
-          file: Dockerfile.xenial-go
-          go: ${{ env.GO_VERSION }}
-          tag: xenial-go${{ env.TAG }}
+          tag: bionic-go${{ env.TAG }}
           hub_user: ${{ secrets.DOCKERHUB_USERNAME }}
           hub_password: ${{ secrets.DOCKERHUB_TOKEN }}
 

@@ -1,7 +1,8 @@
-FROM debian:stretch
+FROM ubuntu:bionic
 
 ARG GOVERSION="1.14.10"
 
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y \
     dpkg-dev \
     wget \
@@ -9,9 +10,7 @@ RUN apt-get update && apt-get install -y \
     rake \
     debhelper \
     git \
-    dh-systemd \
-    msitools \
-    wixl
+    dh-systemd
 
 RUN wget -q https://dl.google.com/go/go${GOVERSION}.linux-amd64.tar.gz && \
     tar -C /usr/local -xzf go${GOVERSION}.linux-amd64.tar.gz && \
