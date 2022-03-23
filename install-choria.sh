@@ -1,0 +1,65 @@
+#!/bin/sh
+
+set -e
+
+FLAVOUR=$(cat /etc/packager.txt)
+METHOD="yum"
+
+case "${FLAVOUR?}" in
+  el7_64)
+    rpm -ivh http://yum.puppetlabs.com/puppet7-release-el-7.noarch.rpm
+
+    ;;
+  el8_64)
+    rpm -ivh http://yum.puppetlabs.com/puppet7-release-el-8.noarch.rpm
+
+    ;;
+
+  buster_64)
+    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet7-release-buster.deb
+    METHOD="apt"
+    ;;
+
+  bullseye_64)
+    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet7-release-buster.deb
+    METHOD="apt"
+
+    ;;
+
+  bionic_64)
+    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet7-release-bionic.deb
+    METHOD="apt"
+
+    ;;
+
+  focal_64)
+    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet7-release-focal.deb
+    METHOD="apt"
+
+    ;;
+
+  *)
+    echo "Uknown test flavour '${FLAVOUR}'"
+    exit 1
+    ;;
+esac
+
+case "${METHOD?}" in
+  yum)
+    yum -y install puppet-agent
+    ;;
+  apt)
+    dpkg -i /tmp/puppet.deb
+    apt update
+    apt -yq install puppet-agent cron systemd
+
+    ;;
+  *)
+    echo "Unknown install method '${METHOD}'"
+    exit 1
+    ;;
+esac
+
+/opt/puppetlabs/bin/puppet module install choria/choria
+/opt/puppetlabs/bin/puppet apply -e 'class{"choria": server => true, manage_service => false}'
+choria buildinfo

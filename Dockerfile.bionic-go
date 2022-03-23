@@ -1,6 +1,7 @@
 FROM ubuntu:bionic
 
 ARG GOVERSION="1.14.10"
+RUN echo -n bionic_64 > /etc/packager.txt
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y \
@@ -10,7 +11,8 @@ RUN apt-get update && apt-get install -y \
     rake \
     debhelper \
     git \
-    dh-systemd
+    dh-systemd 
+
 
 RUN wget -q https://dl.google.com/go/go${GOVERSION}.linux-amd64.tar.gz && \
     tar -C /usr/local -xzf go${GOVERSION}.linux-amd64.tar.gz && \
@@ -28,5 +30,6 @@ ENV GO111MODULE on
 
 COPY lib /packager/lib/
 COPY bin /packager/bin/
+COPY install-choria.sh /bin
 
 CMD /packager/bin/packager.rb
