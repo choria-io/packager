@@ -23,5 +23,6 @@ ENV GO111MODULE on
 
 COPY lib /packager/lib/
 COPY bin /packager/bin/
+COPY install-choria.sh /bin
 
 CMD /packager/bin/packager.rb

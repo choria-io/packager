@@ -1,6 +1,7 @@
 FROM almalinux:8
 
 ARG GOVERSION="1.14.10"
+RUN echo -n el8_64 > /etc/packager.txt
 
 RUN yum module enable -y idm:DL1 && \
     yum install -y rpm-build ruby wget gcc git softhsm softhsm-devel && \
@@ -22,5 +23,6 @@ ENV GO111MODULE on
 
 COPY lib /packager/lib/
 COPY bin /packager/bin/
+COPY install-choria.sh /bin
 
 CMD /packager/bin/packager.rb

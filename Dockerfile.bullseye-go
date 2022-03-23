@@ -1,6 +1,7 @@
 FROM debian:bullseye
 
 ARG GOVERSION="1.14.10"
+RUN echo -n bullseye_64 > /etc/packager.txt
 
 RUN apt-get update && apt-get install -y \
     dpkg-dev \
@@ -28,5 +29,6 @@ ENV GO111MODULE on
 
 COPY lib /packager/lib/
 COPY bin /packager/bin/
+COPY install-choria.sh /bin
 
 CMD /packager/bin/packager.rb

@@ -1,6 +1,7 @@
 FROM centos:7
 
 ARG GOVERSION="1.14.10"
+RUN echo -n el7_64 > /etc/packager.txt
 
 RUN yum install -y rpm-build ruby wget gcc softhsm git && \
     yum clean all
@@ -21,5 +22,6 @@ ENV GO111MODULE on
 
 COPY lib /packager/lib/
 COPY bin /packager/bin/
+COPY install-choria.sh /bin
 
 CMD /packager/bin/packager.rb
