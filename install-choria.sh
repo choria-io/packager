@@ -3,38 +3,38 @@
 set -e
 
 FLAVOUR=$(cat /etc/packager.txt)
-METHOD="yum"
+METHOD="apt"
 
 case "${FLAVOUR?}" in
   el7_64)
     rpm -ivh http://yum.puppetlabs.com/puppet7-release-el-7.noarch.rpm
+    METHOD="yum"
+
 
     ;;
   el8_64)
     rpm -ivh http://yum.puppetlabs.com/puppet7-release-el-8.noarch.rpm
+    METHOD="yum"
 
     ;;
 
   buster_64)
     wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet7-release-buster.deb
-    METHOD="apt"
+
     ;;
 
   bullseye_64)
     wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet7-release-buster.deb
-    METHOD="apt"
 
     ;;
 
   bionic_64)
     wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet7-release-bionic.deb
-    METHOD="apt"
 
     ;;
 
   focal_64)
     wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet7-release-focal.deb
-    METHOD="apt"
 
     ;;
 
@@ -46,7 +46,7 @@ esac
 
 case "${METHOD?}" in
   yum)
-    yum -y install puppet-agent
+    yum -y install puppet-agent crond
     ;;
   apt)
     dpkg -i /tmp/puppet.deb
