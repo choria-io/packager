@@ -46,7 +46,7 @@ esac
 
 case "${METHOD?}" in
   yum)
-    yum -y install puppet-agent crond
+    yum -y install puppet-agent
     ;;
   apt)
     dpkg -i /tmp/puppet.deb
