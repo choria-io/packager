@@ -165,6 +165,7 @@ class Packager
       flags = build_flags
 
       args << "-o" << output
+      flags << "--trimpath"
       args << "--tags" << @tags.join(",") unless @tags.empty?
       args << "-ldflags" << "'%s'" % flags.join(" ") unless flags.empty?
       args << @build_package if @build_package
