@@ -61,5 +61,11 @@ case "${METHOD?}" in
 esac
 
 /opt/puppetlabs/bin/puppet module install choria/choria
-/opt/puppetlabs/bin/puppet apply -e 'class{"choria": server => true, manage_service => false}'
+/opt/puppetlabs/bin/puppet apply -e '
+class{"choria":
+  server => true,
+  manage_service => false
+}
+class{"choria::broker": }
+'
 choria buildinfo
