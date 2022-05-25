@@ -24,7 +24,7 @@ case "${FLAVOUR?}" in
     ;;
 
   bullseye_64)
-    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet7-release-buster.deb
+    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet7-release-bullseye.deb
 
     ;;
 
