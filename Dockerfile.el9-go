@@ -3,8 +3,7 @@ FROM almalinux:9
 ARG GOVERSION="1.14.10"
 RUN echo -n el8_64 > /etc/packager.txt
 
-RUN yum module enable -y idm:DL1 && \
-    yum install -y rpm-build ruby wget gcc git softhsm softhsm-devel && \
+RUN yum install -y rpm-build ruby wget gcc git softhsm && \
     yum clean all
 
 RUN wget -q https://dl.google.com/go/go${GOVERSION}.linux-amd64.tar.gz && \
