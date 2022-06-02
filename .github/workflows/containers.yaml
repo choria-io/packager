@@ -135,6 +135,6 @@ jobs:
         with:
           file: Dockerfile.el9-go
           go: ${{ env.GO_VERSION }}
-          tag: el8-go${{ env.TAG }}
+          tag: el9-go${{ env.TAG }}
           hub_user: ${{ secrets.DOCKERHUB_USERNAME }}
           hub_password: ${{ secrets.DOCKERHUB_TOKEN }}
