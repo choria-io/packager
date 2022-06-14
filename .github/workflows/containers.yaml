@@ -83,6 +83,20 @@ jobs:
           hub_user: ${{ secrets.DOCKERHUB_USERNAME }}
           hub_password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+  jammy_go:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - uses: ./.github/actions/build-packager
+        with:
+          file: Dockerfile.jammy-go
+          go: ${{ env.GO_VERSION }}
+          tag: jammy-go${{ env.TAG }}
+          hub_user: ${{ secrets.DOCKERHUB_USERNAME }}
+          hub_password: ${{ secrets.DOCKERHUB_TOKEN }}
+
   el7_go:
     runs-on: ubuntu-latest
     steps:
