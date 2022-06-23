@@ -1,7 +1,7 @@
 FROM almalinux:9
 
 ARG GOVERSION="1.14.10"
-RUN echo -n el8_64 > /etc/packager.txt
+RUN echo -n el9_64 > /etc/packager.txt
 
 RUN yum install -y rpm-build ruby wget gcc git softhsm && \
     yum clean all
@@ -23,5 +23,9 @@ ENV GO111MODULE on
 COPY lib /packager/lib/
 COPY bin /packager/bin/
 COPY install-choria.sh /bin
+
+# el9 treats strip failures as critical, this restores
+# previous optional behavior
+COPY brp-strip /usr/lib/rpm/brp-strip
 
 CMD /packager/bin/packager.rb
