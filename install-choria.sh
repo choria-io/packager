@@ -12,8 +12,15 @@ case "${FLAVOUR?}" in
 
 
     ;;
+
   el8_64)
     rpm -ivh http://yum.puppetlabs.com/puppet7-release-el-8.noarch.rpm
+    METHOD="yum"
+
+    ;;
+
+  el9_64)
+    rpm -ivh http://yum.puppetlabs.com/puppet7-release-el-9.noarch.rpm
     METHOD="yum"
 
     ;;
