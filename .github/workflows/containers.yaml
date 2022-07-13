@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  GO_VERSION: "1.18.3"
+  GO_VERSION: "1.18.4"
   TAG: "1.18"
 
 jobs:

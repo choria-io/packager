@@ -26,6 +26,6 @@ COPY install-choria.sh /bin
 
 # el9 treats strip failures as critical, this restores
 # previous optional behavior
-COPY brp-strip /usr/lib/rpm/brp-strip
+COPY el9/brp-strip /usr/lib/rpm/brp-strip
 
 CMD /packager/bin/packager.rb
