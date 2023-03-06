@@ -22,6 +22,11 @@ inputs:
     descriotion: Docker hub username
     required: true
 
+  platforms:
+    description: Platforms to build
+    required: true
+    default: linux/amd64
+
 runs:
   using: composite
   steps:
@@ -39,6 +44,7 @@ runs:
       with:
         push: true
         tags: choria/packager:${{ inputs.tag }}
+        platforms: ${{ inputs.platforms }}
         file: ${{ inputs.file }}
         build-args: |
           GOVERSION=${{ inputs.go }}
