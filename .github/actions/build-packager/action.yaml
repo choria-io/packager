@@ -39,6 +39,7 @@ runs:
     - name: Login to DockerHub
       uses: docker/login-action@v2
       with:
+        registry: registry.choria.io
         username: ${{ inputs.hub_user }}
         password: ${{ inputs.hub_password }}
 
