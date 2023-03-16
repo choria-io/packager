@@ -46,7 +46,7 @@ runs:
       uses: docker/build-push-action@v4
       with:
         push: true
-        tags: choria/packager:${{ inputs.tag }}
+        tags: registry.choria.io/choria/packager:${{ inputs.tag }}
         platforms: ${{ inputs.platforms }}
         file: ${{ inputs.file }}
         build-args: |

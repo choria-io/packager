@@ -21,8 +21,8 @@ jobs:
           file: Dockerfile.bullseye-go
           go: ${{ env.GO_VERSION }}
           tag: bullseye-go${{ env.TAG }}
-          hub_user: ${{ secrets.DOCKERHUB_USERNAME }}
-          hub_password: ${{ secrets.DOCKERHUB_TOKEN }}
+          hub_user: ${{ secrets.REGISTRY_USERNAME }}
+          hub_password: ${{ secrets.REGISTRY_PASSWORD }}
 
   buster_go:
     runs-on: ubuntu-latest
@@ -35,8 +35,8 @@ jobs:
           file: Dockerfile.buster-go
           go: ${{ env.GO_VERSION }}
           tag: buster-go${{ env.TAG }}
-          hub_user: ${{ secrets.DOCKERHUB_USERNAME }}
-          hub_password: ${{ secrets.DOCKERHUB_TOKEN }}
+          hub_user: ${{ secrets.REGISTRY_USERNAME }}
+          hub_password: ${{ secrets.REGISTRY_PASSWORD }}
 
   debian_go:
     needs:
@@ -52,8 +52,8 @@ jobs:
           file: Dockerfile.debian-go
           go: ${{ env.GO_VERSION }}
           tag: debian-go${{ env.TAG }}
-          hub_user: ${{ secrets.DOCKERHUB_USERNAME }}
-          hub_password: ${{ secrets.DOCKERHUB_TOKEN }}
+          hub_user: ${{ secrets.REGISTRY_USERNAME }}
+          hub_password: ${{ secrets.REGISTRY_PASSWORD }}
 
   bionic_go:
     runs-on: ubuntu-latest
@@ -66,8 +66,8 @@ jobs:
           file: Dockerfile.bionic-go
           go: ${{ env.GO_VERSION }}
           tag: bionic-go${{ env.TAG }}
-          hub_user: ${{ secrets.DOCKERHUB_USERNAME }}
-          hub_password: ${{ secrets.DOCKERHUB_TOKEN }}
+          hub_user: ${{ secrets.REGISTRY_USERNAME }}
+          hub_password: ${{ secrets.REGISTRY_PASSWORD }}
 
   focal_go:
     runs-on: ubuntu-latest
@@ -80,8 +80,8 @@ jobs:
           file: Dockerfile.focal-go
           go: ${{ env.GO_VERSION }}
           tag: focal-go${{ env.TAG }}
-          hub_user: ${{ secrets.DOCKERHUB_USERNAME }}
-          hub_password: ${{ secrets.DOCKERHUB_TOKEN }}
+          hub_user: ${{ secrets.REGISTRY_USERNAME }}
+          hub_password: ${{ secrets.REGISTRY_PASSWORD }}
 
   jammy_go:
     runs-on: ubuntu-latest
@@ -94,8 +94,8 @@ jobs:
           file: Dockerfile.jammy-go
           go: ${{ env.GO_VERSION }}
           tag: jammy-go${{ env.TAG }}
-          hub_user: ${{ secrets.DOCKERHUB_USERNAME }}
-          hub_password: ${{ secrets.DOCKERHUB_TOKEN }}
+          hub_user: ${{ secrets.REGISTRY_USERNAME }}
+          hub_password: ${{ secrets.REGISTRY_PASSWORD }}
 
   el7_go:
     runs-on: ubuntu-latest
@@ -108,8 +108,8 @@ jobs:
           file: Dockerfile.el7-go
           go: ${{ env.GO_VERSION }}
           tag: el7-go${{ env.TAG }}
-          hub_user: ${{ secrets.DOCKERHUB_USERNAME }}
-          hub_password: ${{ secrets.DOCKERHUB_TOKEN }}
+          hub_user: ${{ secrets.REGISTRY_USERNAME }}
+          hub_password: ${{ secrets.REGISTRY_PASSWORD }}
 
   el7_puppet_go:
     runs-on: ubuntu-latest
@@ -122,8 +122,8 @@ jobs:
           file: Dockerfile.el7-puppet-go
           go: ${{ env.GO_VERSION }}
           tag: el7-puppet-go${{ env.TAG }}
-          hub_user: ${{ secrets.DOCKERHUB_USERNAME }}
-          hub_password: ${{ secrets.DOCKERHUB_TOKEN }}
+          hub_user: ${{ secrets.REGISTRY_USERNAME }}
+          hub_password: ${{ secrets.REGISTRY_PASSWORD }}
 
   el8_go:
     runs-on: ubuntu-latest
@@ -136,8 +136,8 @@ jobs:
           file: Dockerfile.el8-go
           go: ${{ env.GO_VERSION }}
           tag: el8-go${{ env.TAG }}
-          hub_user: ${{ secrets.DOCKERHUB_USERNAME }}
-          hub_password: ${{ secrets.DOCKERHUB_TOKEN }}
+          hub_user: ${{ secrets.REGISTRY_USERNAME }}
+          hub_password: ${{ secrets.REGISTRY_PASSWORD }}
           platforms: linux/amd64,linux/arm64
 
   el9_go:
@@ -151,6 +151,6 @@ jobs:
           file: Dockerfile.el9-go
           go: ${{ env.GO_VERSION }}
           tag: el9-go${{ env.TAG }}
-          hub_user: ${{ secrets.DOCKERHUB_USERNAME }}
-          hub_password: ${{ secrets.DOCKERHUB_TOKEN }}
+          hub_user: ${{ secrets.REGISTRY_USERNAME }}
+          hub_password: ${{ secrets.REGISTRY_PASSWORD }}
           platforms: linux/amd64,linux/arm64
