@@ -7,46 +7,46 @@ METHOD="apt"
 
 case "${FLAVOUR?}" in
   el7_64)
-    rpm -ivh http://yum.puppetlabs.com/puppet7-release-el-7.noarch.rpm
+    rpm -ivh http://yum.puppetlabs.com/puppet8-release-el-7.noarch.rpm
     METHOD="yum"
 
 
     ;;
 
   el8_64)
-    rpm -ivh http://yum.puppetlabs.com/puppet7-release-el-8.noarch.rpm
+    rpm -ivh http://yum.puppetlabs.com/puppet8-release-el-8.noarch.rpm
     METHOD="yum"
 
     ;;
 
   el9_64)
-    rpm -ivh http://yum.puppetlabs.com/puppet7-release-el-9.noarch.rpm
+    rpm -ivh http://yum.puppetlabs.com/puppet8-release-el-9.noarch.rpm
     METHOD="yum"
 
     ;;
 
   buster_64)
-    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet7-release-buster.deb
+    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet8-release-buster.deb
 
     ;;
 
   bullseye_64)
-    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet7-release-bullseye.deb
+    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet8-release-bullseye.deb
 
     ;;
 
   bionic_64)
-    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet7-release-bionic.deb
+    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet8-release-bionic.deb
 
     ;;
 
   focal_64)
-    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet7-release-focal.deb
+    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet8-release-focal.deb
 
     ;;
 
   jammy_64)
-    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet7-release-jammy.deb
+    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet8-release-jammy.deb
 
     ;;
 
