@@ -10,11 +10,25 @@ env:
   TAG: "1.21"
 
 jobs:
+  bookworm_go:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - uses: ./.github/actions/build-packager
+        with:
+          file: Dockerfile.bookworm-go
+          go: ${{ env.GO_VERSION }}
+          tag: bookworm-go${{ env.TAG }}
+          hub_user: ${{ secrets.REGISTRY_RELEASE_USERNAME }}
+          hub_password: ${{ secrets.REGISTRY_RELEASE_PASSWORD }}
+
   bullseye_go:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - uses: ./.github/actions/build-packager
         with:
@@ -28,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - uses: ./.github/actions/build-packager
         with:
@@ -45,7 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - uses: ./.github/actions/build-packager
         with:
@@ -59,7 +73,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - uses: ./.github/actions/build-packager
         with:
@@ -73,7 +87,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - uses: ./.github/actions/build-packager
         with:
@@ -87,7 +101,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - uses: ./.github/actions/build-packager
         with:
@@ -101,7 +115,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - uses: ./.github/actions/build-packager
         with:
@@ -115,7 +129,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - uses: ./.github/actions/build-packager
         with:
@@ -129,7 +143,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - uses: ./.github/actions/build-packager
         with:
@@ -144,7 +158,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - uses: ./.github/actions/build-packager
         with:
