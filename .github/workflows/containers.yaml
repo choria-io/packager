@@ -40,7 +40,7 @@ jobs:
 
   debian_go:
     needs:
-      - buster_go
+      - bookworm_go
 
     runs-on: ubuntu-latest
     steps:
