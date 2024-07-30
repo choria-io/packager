@@ -83,6 +83,20 @@ jobs:
           hub_user: ${{ secrets.REGISTRY_RELEASE_USERNAME }}
           hub_password: ${{ secrets.REGISTRY_RELEASE_PASSWORD }}
 
+  noble_go:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - uses: ./.github/actions/build-packager
+        with:
+          file: Dockerfile.noble-go
+          go: ${{ env.GO_VERSION }}
+          tag: focal-go${{ env.TAG }}
+          hub_user: ${{ secrets.REGISTRY_RELEASE_USERNAME }}
+          hub_password: ${{ secrets.REGISTRY_RELEASE_PASSWORD }}
+
   jammy_go:
     runs-on: ubuntu-latest
     steps:

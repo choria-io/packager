@@ -50,6 +50,11 @@ case "${FLAVOUR?}" in
 
     ;;
 
+  noble_64)
+    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet8-release-noble.deb
+
+    ;;
+
   *)
     echo "Uknown test flavour '${FLAVOUR}'"
     exit 1
