@@ -93,7 +93,7 @@ jobs:
         with:
           file: Dockerfile.noble-go
           go: ${{ env.GO_VERSION }}
-          tag: focal-go${{ env.TAG }}
+          tag: noble-go${{ env.TAG }}
           hub_user: ${{ secrets.REGISTRY_RELEASE_USERNAME }}
           hub_password: ${{ secrets.REGISTRY_RELEASE_PASSWORD }}
 
