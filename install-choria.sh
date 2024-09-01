@@ -10,7 +10,6 @@ case "${FLAVOUR?}" in
     rpm -ivh http://yum.puppetlabs.com/puppet8-release-el-7.noarch.rpm
     METHOD="yum"
 
-
     ;;
 
   el8_64)
@@ -52,6 +51,11 @@ case "${FLAVOUR?}" in
 
   noble_64)
     wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet8-release-noble.deb
+
+    ;;
+
+  bookworm_64)
+    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet8-release-bookworm.deb
 
     ;;
 
