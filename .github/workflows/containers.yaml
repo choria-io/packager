@@ -6,8 +6,8 @@ on:
       - main
 
 env:
-  GO_VERSION: "1.22.12"
-  TAG: "1.22"
+  GO_VERSION: "1.23.6"
+  TAG: "1.23"
 
 jobs:
   bookworm_go:
