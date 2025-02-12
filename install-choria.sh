@@ -51,12 +51,12 @@ esac
 
 case "${METHOD?}" in
   yum)
-    yum -y install puppet-agent
+    yum -y install openvox-agent
     ;;
   apt)
     dpkg -i /tmp/puppet.deb
     apt update
-    apt -yq install puppet-agent cron systemd
+    apt -yq install openvox-agent cron systemd
 
     ;;
   *)
