@@ -19,27 +19,27 @@ case "${FLAVOUR?}" in
     ;;
 
   bullseye_64)
-    wget -OL /tmp/puppet.deb https://s3.osuosl.org/openvox-apt/openvox8-release-debian11.deb
+    wget -O /tmp/puppet.deb https://s3.osuosl.org/openvox-apt/openvox8-release-debian11.deb
 
     ;;
 
   bookworm_64)
-    wget -OL /tmp/puppet.deb https://s3.osuosl.org/openvox-apt/openvox8-release-debian12.deb
+    wget -O /tmp/puppet.deb https://s3.osuosl.org/openvox-apt/openvox8-release-debian12.deb
 
     ;;
 
   bionic_64)
-    wget -OL /tmp/puppet.deb https://s3.osuosl.org/openvox-apt/openvox8-release-ubuntu18.04.deb
+    wget -O /tmp/puppet.deb https://s3.osuosl.org/openvox-apt/openvox8-release-ubuntu18.04.deb
 
     ;;
 
   focal_64)
-    wget -OL /tmp/puppet.deb https://s3.osuosl.org/openvox-apt/openvox8-release-ubuntu20.04.deb
+    wget -O /tmp/puppet.deb https://s3.osuosl.org/openvox-apt/openvox8-release-ubuntu20.04.deb
 
     ;;
 
   noble_64)
-    wget -OL /tmp/puppet.deb https://s3.osuosl.org/openvox-apt/openvox8-release-ubuntu24.04.deb
+    wget -O /tmp/puppet.deb https://s3.osuosl.org/openvox-apt/openvox8-release-ubuntu24.04.deb
 
     ;;
 
