@@ -6,56 +6,40 @@ FLAVOUR=$(cat /etc/packager.txt)
 METHOD="apt"
 
 case "${FLAVOUR?}" in
-  el7_64)
-    rpm -ivh http://yum.puppetlabs.com/puppet8-release-el-7.noarch.rpm
-    METHOD="yum"
-
-    ;;
-
   el8_64)
-    rpm -ivh http://yum.puppetlabs.com/puppet8-release-el-8.noarch.rpm
+    rpm -ivh https://s3.osuosl.org/openvox-yum/openvox8-release-el-8.noarch.rpm
     METHOD="yum"
 
     ;;
 
   el9_64)
-    rpm -ivh http://yum.puppetlabs.com/puppet8-release-el-9.noarch.rpm
+    rpm -ivh https://s3.osuosl.org/openvox-yum/openvox8-release-el-9.noarch.rpm
     METHOD="yum"
 
     ;;
 
-  buster_64)
-    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet8-release-buster.deb
-
-    ;;
-
   bullseye_64)
-    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet8-release-bullseye.deb
-
-    ;;
-
-  bionic_64)
-    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet8-release-bionic.deb
-
-    ;;
-
-  focal_64)
-    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet8-release-focal.deb
-
-    ;;
-
-  jammy_64)
-    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet8-release-jammy.deb
-
-    ;;
-
-  noble_64)
-    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet8-release-noble.deb
+    wget -OL /tmp/puppet.deb https://s3.osuosl.org/openvox-apt/openvox8-release-debian11.deb
 
     ;;
 
   bookworm_64)
-    wget -O /tmp/puppet.deb http://apt.puppetlabs.com/puppet8-release-bookworm.deb
+    wget -OL /tmp/puppet.deb https://s3.osuosl.org/openvox-apt/openvox8-release-debian12.deb
+
+    ;;
+
+  bionic_64)
+    wget -OL /tmp/puppet.deb https://s3.osuosl.org/openvox-apt/openvox8-release-ubuntu18.04.deb
+
+    ;;
+
+  focal_64)
+    wget -OL /tmp/puppet.deb https://s3.osuosl.org/openvox-apt/openvox8-release-ubuntu20.04.deb
+
+    ;;
+
+  noble_64)
+    wget -OL /tmp/puppet.deb https://s3.osuosl.org/openvox-apt/openvox8-release-ubuntu24.04.deb
 
     ;;
 
