@@ -145,6 +145,7 @@ class Packager
       flags << '-X "%s=%s"' % [@flagsmap["SHA"], sha] if @flagsmap["SHA"]
       flags << '-X "%s=%s"' % [@flagsmap["BuildTime"], @time] if @flagsmap["BuildTime"]
       flags << "-B 0x%s" % @buildid
+      flags << "-w"
 
       @flags.each do |flag, value|
         next if ["Version", "SHA", "BuildTime"].include?(flag)
