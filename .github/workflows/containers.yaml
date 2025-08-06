@@ -140,3 +140,18 @@ jobs:
           hub_user: ${{ secrets.REGISTRY_RELEASE_USERNAME }}
           hub_password: ${{ secrets.REGISTRY_RELEASE_PASSWORD }}
           platforms: linux/amd64,linux/arm64
+
+  el10_go:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - uses: ./.github/actions/build-packager
+        with:
+          file: Dockerfile.el10-go
+          go: ${{ env.GO_VERSION }}
+          tag: el10-go${{ env.TAG }}
+          hub_user: ${{ secrets.REGISTRY_RELEASE_USERNAME }}
+          hub_password: ${{ secrets.REGISTRY_RELEASE_PASSWORD }}
+          platforms: linux/amd64,linux/arm64
