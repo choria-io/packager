@@ -18,6 +18,12 @@ case "${FLAVOUR?}" in
 
     ;;
 
+  el10_64)
+    rpm -ivh https://s3.osuosl.org/openvox-yum/openvox8-release-el-10.noarch.rpm
+    METHOD="yum"
+
+    ;;
+
   bullseye_64)
     wget -O /tmp/puppet.deb https://s3.osuosl.org/openvox-apt/openvox8-release-debian11.deb
 
