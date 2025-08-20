@@ -34,6 +34,11 @@ case "${FLAVOUR?}" in
 
     ;;
 
+  trixie_64)
+    wget -O /tmp/puppet.deb https://s3.osuosl.org/openvox-apt/openvox8-release-debian13.deb
+
+    ;;
+
   bionic_64)
     wget -O /tmp/puppet.deb https://s3.osuosl.org/openvox-apt/openvox8-release-ubuntu18.04.deb
 

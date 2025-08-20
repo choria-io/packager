@@ -38,6 +38,20 @@ jobs:
           hub_user: ${{ secrets.REGISTRY_RELEASE_USERNAME }}
           hub_password: ${{ secrets.REGISTRY_RELEASE_PASSWORD }}
 
+  trixie_go:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - uses: ./.github/actions/build-packager
+        with:
+          file: Dockerfile.trixie-go
+          go: ${{ env.GO_VERSION }}
+          tag: trixie-go${{ env.TAG }}
+          hub_user: ${{ secrets.REGISTRY_RELEASE_USERNAME }}
+          hub_password: ${{ secrets.REGISTRY_RELEASE_PASSWORD }}
+
   debian_go:
     needs:
       - bookworm_go
