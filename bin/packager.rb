@@ -45,7 +45,7 @@ begin
   end
 
   packages = Packager::Packages.new(
-    ENV["VERSION"],
+    ENV["VERSION"].sub("-", "~"),
     defn[ENV["BUILD"]]["packages"],
     targets
   )

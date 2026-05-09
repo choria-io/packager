@@ -1,7 +1,7 @@
-FROM debian:trixie
+FROM debian:latest
 
 ARG GOVERSION="1.24.6"
-RUN echo -n trixie_64 > /etc/packager.txt
+RUN echo -n deb_64 > /etc/packager.txt
 
 RUN apt-get update && apt-get install -y \
     dpkg-dev \
