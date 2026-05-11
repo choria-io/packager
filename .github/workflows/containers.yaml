@@ -154,6 +154,20 @@ jobs:
           hub_user: ${{ secrets.REGISTRY_RELEASE_USERNAME }}
           hub_password: ${{ secrets.REGISTRY_RELEASE_PASSWORD }}
 
+  resolute_go:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - uses: ./.github/actions/build-packager
+        with:
+          file: Dockerfile.resolute-go
+          go: ${{ env.GO_VERSION }}
+          tag: resolute-go${{ env.TAG }}
+          hub_user: ${{ secrets.REGISTRY_RELEASE_USERNAME }}
+          hub_password: ${{ secrets.REGISTRY_RELEASE_PASSWORD }}
+
   el9_go:
     runs-on: ubuntu-latest
     steps:

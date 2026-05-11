@@ -54,6 +54,11 @@ case "${FLAVOUR?}" in
 
     ;;
 
+  resolute_64)
+    wget -O /tmp/puppet.deb https://s3.osuosl.org/openvox-apt/openvox8-release-ubuntu26.04.deb
+
+    ;;
+
   *)
     echo "Uknown test flavour '${FLAVOUR}'"
     exit 1
