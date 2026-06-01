@@ -68,6 +68,9 @@ class Packager
       ENV["GOARCH"] = @arch.to_s
       ENV["GOARM"] = @arm.to_s if @arm
 
+      # Force generic amd64 builds to be v1 but specific env settings can override this below
+      ENV["GOAMD64"] = "v1" if @arch == "amd64"
+
       @env.each do |k, v|
         ENV[k] = v
       end
