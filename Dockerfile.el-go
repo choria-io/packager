@@ -1,4 +1,4 @@
-FROM almalinux:latest
+FROM almalinux:9
 
 ARG GOVERSION="1.24.6"
 RUN echo -n el_64 > /etc/packager.txt
