@@ -1,7 +1,7 @@
-FROM debian:latest
+FROM debian:bookworm
 
 ARG GOVERSION="1.24.6"
-RUN echo -n deb_64 > /etc/packager.txt
+RUN echo -n bookworm_64 > /etc/packager.txt
 
 RUN apt-get update && apt-get install -y \
     dpkg-dev \
