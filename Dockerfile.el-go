@@ -1,7 +1,7 @@
 FROM almalinux:9
 
 ARG GOVERSION="1.24.6"
-RUN echo -n el_64 > /etc/packager.txt
+RUN echo -n el9_64 > /etc/packager.txt
 
 RUN yum install -y rpm-build ruby wget gcc git softhsm && \
     yum clean all
