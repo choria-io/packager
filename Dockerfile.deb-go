@@ -1,7 +1,7 @@
-FROM debian:bookworm
+FROM debian:bullseye
 
 ARG GOVERSION="1.24.6"
-RUN echo -n bookworm_64 > /etc/packager.txt
+RUN echo -n bullseye_64 > /etc/packager.txt
 
 RUN apt-get update && apt-get install -y \
     dpkg-dev \
