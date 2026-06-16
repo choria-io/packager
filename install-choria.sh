@@ -76,29 +76,7 @@ case "${METHOD?}" in
     ;;
 esac
 
-/opt/puppetlabs/puppet/bin/gem install r10k
-
-cd /etc/puppetlabs/code
-
-cat > Puppetfile << EOF
-mod "puppetlabs/apt"
-mod "puppetlabs/concat"
-mod "puppetlabs/stdlib"
-mod "puppet/systemd"
-
-# Unfortunately r10k doesnt allow tracking latest with git so this is the next best thing
-# to avoid maintaining this after every release
-mod "choria/choria", :git => "https://github.com/choria-io/puppet-choria", :branch => "main"
-mod "choria/mcollective", :git => "https://github.com/choria-io/puppet-mcollective", :branch => "main"
-mod "choria/mcollective_choria", :git => "https://github.com/choria-plugins/mcollective_choria", :branch => "main"
-mod "choria/mcollective_agent_filemgr", :git => "https://github.com/choria-plugins/filemgr-agent", :branch => "main"
-mod "choria/mcollective_agent_package", :git => "https://github.com/choria-plugins/package-agent", :branch => "main"
-mod "choria/mcollective_agent_puppet", :git => "https://github.com/choria-plugins/puppet-agent", :branch => "main"
-mod "choria/mcollective_agent_service", :git => "https://github.com/choria-plugins/service-agent", :branch => "main"
-mod "choria/mcollective_util_actionpolicy", :git => "https://github.com/choria-plugins/action-policy", :branch => "main"
-EOF
-
-/opt/puppetlabs/puppet/bin/r10k puppetfile install -v
+/opt/puppetlabs/bin/puppet module install choria/choria
 
 /opt/puppetlabs/bin/puppet apply -e 'class{"choria": server => true, manage_service => false}'
 
