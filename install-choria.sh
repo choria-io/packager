@@ -24,11 +24,6 @@ case "${FLAVOUR?}" in
 
     ;;
 
-  bullseye_64)
-    wget -O /tmp/puppet.deb https://s3.osuosl.org/openvox-apt/openvox8-release-debian11.deb
-
-    ;;
-
   bookworm_64)
     wget -O /tmp/puppet.deb https://s3.osuosl.org/openvox-apt/openvox8-release-debian12.deb
 
